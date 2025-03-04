@@ -1,0 +1,67 @@
+Beverage Name,Type,Flavor Profile,Alcohol Content (ABV%),Acidity Level,Sweetness Level,Tannin Level,Serving Temperature,Snack Name,Cuisine Type,Snack Flavor Profile,Texture,Fat Content,Spice Level,Pairing Score,Pairing Notes
+Sauvignon Blanc,Wine,Crisp,12.0,High,Dry,Low,Cold,Barbecue Wings,American,Tangy,Crispy,High,Medium,6,Sauvignon Blanc pairs well with Barbecue Wings due to contrasting taste.
+Lager,Beer,Light,4.5,Low,Dry,,Cold,Grilled Chicken,American,Savory,Tender,Medium,Mild,5,Lager pairs well with Grilled Chicken due to balancing textures.
+Baileys Irish Cream,Spirits,Creamy,17.0,Low,Sweet,,Cold,Pretzels,General,Salty,Crunchy,Low,Mild,3,Baileys Irish Cream pairs well with Pretzels due to complementary flavors.
+Stout,Beer,Rich,5.5,Low,Sweet,,Cold,Chakli,Indian,Salty,Crunchy,Medium,Mild,2,Stout pairs well with Chakli due to balancing textures.
+Merlot,Wine,Smooth,13.5,Medium,Semi-Dry,Medium,Room Temp,Chips & Guacamole,Mexican,Savory,Crunchy,Medium,Mild,4,Merlot pairs well with Chips & Guacamole due to balancing textures.
+Brandy,Spirits,Fruity-Oaky,40.0,Low,Semi-Sweet,,Room Temp,Barbecue Wings,American,Tangy,Crispy,High,Medium,1,Brandy pairs well with Barbecue Wings due to contrasting taste.
+Mezcal,Spirits,Smoky,45.0,Low,Dry,,Room Temp,French Fries,American,Salty,Crispy,Medium,Mild,3,Mezcal pairs well with French Fries due to contrasting taste.
+Hefeweizen,Beer,Banana-Clove,5.2,Low,Semi-Sweet,,Cold,Dark Chocolate,Dessert,Bitter-Sweet,Smooth,Medium,Mild,4,Hefeweizen pairs well with Dark Chocolate due to contrasting taste.
+Espresso Martini,Cocktail,Coffee-Flavored,20.0,Low,Semi-Sweet,,Cold,Masala Peanuts,Indian,Spicy,Crunchy,Medium,Medium,6,Espresso Martini pairs well with Masala Peanuts due to spice contrast.
+Zinfandel,Wine,Jammy,14.5,Medium,Semi-Sweet,Medium,Room Temp,Spicy Nachos,Mexican,Spicy,Crunchy,Medium,Hot,3,Zinfandel pairs well with Spicy Nachos due to balancing textures.
+Amaretto,Spirits,Sweet,28.0,Low,Sweet,,Room Temp,Grilled Chicken,American,Savory,Tender,Medium,Mild,4,Amaretto pairs well with Grilled Chicken due to complementary flavors.
+Prosecco,Wine,Sparkling,11.0,High,Semi-Sweet,Low,Cold,Salted Nuts,Snack,Salty,Crunchy,Medium,Mild,9,Prosecco pairs well with Salted Nuts due to spice contrast.
+Wheat Beer,Beer,Citrusy,5.0,Low,Semi-Sweet,,Cold,Pani Puri,Indian,Tangy,Crispy,Low,Medium,9,Wheat Beer pairs well with Pani Puri due to balancing textures.
+Pilsner,Beer,Crisp,5.0,Medium,Dry,,Cold,Barbecue Wings,American,Tangy,Crispy,High,Medium,10,Pilsner pairs well with Barbecue Wings due to contrasting taste.
+Mojito,Cocktail,Minty,20.0,Medium,Semi-Sweet,,Cold,Paneer Tikka,Indian,Savory,Soft,High,Mild,3,Mojito pairs well with Paneer Tikka due to balancing textures.
+Gose,Beer,Salty-Tart,4.5,High,Dry,,Cold,Samosa,Indian,Spicy,Crispy,Medium,Medium,2,Gose pairs well with Samosa due to contrasting taste.
+Chardonnay,Wine,Fruity,12.5,Medium,Dry,Low,Cold,Buffalo Wings,American,Spicy,Crispy,High,Hot,1,Chardonnay pairs well with Buffalo Wings due to contrasting taste.
+Old Fashioned,Cocktail,Strong,30.0,Low,Semi-Sweet,,Room Temp,Salted Nuts,Snack,Salty,Crunchy,Medium,Mild,5,Old Fashioned pairs well with Salted Nuts due to contrasting taste.
+Sambuca,Spirits,Anise-Flavored,38.0,Low,Semi-Sweet,,Room Temp,Jalebi,Indian,Sweet,Chewy,High,Mild,6,Sambuca pairs well with Jalebi due to spice contrast.
+Tequila,Spirits,Citrusy,38.0,Low,Dry,,Room Temp,Dhokla,Indian,Savory,Soft,Medium,Mild,5,Tequila pairs well with Dhokla due to complementary flavors.
+Daiquiri,Cocktail,Citrusy,22.0,Medium,Semi-Sweet,,Cold,Paneer Tikka,Indian,Savory,Soft,High,Mild,4,Daiquiri pairs well with Paneer Tikka due to spice contrast.
+Cosmopolitan,Cocktail,Cranberry-Citrusy,25.0,Medium,Semi-Sweet,,Cold,Salted Nuts,Snack,Salty,Crunchy,Medium,Mild,7,Cosmopolitan pairs well with Salted Nuts due to complementary flavors.
+Gin,Spirits,Herbal,42.0,Low,Dry,,Cold,Grilled Chicken,American,Savory,Tender,Medium,Mild,4,Gin pairs well with Grilled Chicken due to spice contrast.
+Grenache,Wine,Fruity-Spicy,14.5,Medium,Semi-Dry,Medium,Room Temp,Chakli,Indian,Salty,Crunchy,Medium,Mild,2,Grenache pairs well with Chakli due to balancing textures.
+Brown Ale,Beer,Nutty,5.5,Medium,Semi-Dry,,Cold,Paneer Tikka,Indian,Savory,Soft,High,Mild,4,Brown Ale pairs well with Paneer Tikka due to complementary flavors.
+Amber Ale,Beer,Caramel,5.5,Medium,Semi-Dry,,Cold,Dhokla,Indian,Savory,Soft,Medium,Mild,1,Amber Ale pairs well with Dhokla due to complementary flavors.
+Absinthe,Spirits,Herbal,55.0,Low,Dry,,Room Temp,Salted Nuts,Snack,Salty,Crunchy,Medium,Mild,6,Absinthe pairs well with Salted Nuts due to balancing textures.
+Whiskey Sour,Cocktail,Tangy,25.0,Medium,Semi-Sweet,,Cold,Chakli,Indian,Salty,Crunchy,Medium,Mild,9,Whiskey Sour pairs well with Chakli due to spice contrast.
+Negroni,Cocktail,Bitter,24.0,Low,Semi-Dry,,Cold,Paneer Tikka,Indian,Savory,Soft,High,Mild,8,Negroni pairs well with Paneer Tikka due to balancing textures.
+Saison,Beer,Fruity-Spicy,6.5,Medium,Dry,,Cold,French Fries,American,Salty,Crispy,Medium,Mild,7,Saison pairs well with French Fries due to balancing textures.
+Porter,Beer,Roasted,6.0,Low,Semi-Sweet,,Cold,Samosa,Indian,Spicy,Crispy,Medium,Medium,7,Porter pairs well with Samosa due to complementary flavors.
+Cognac,Spirits,Smooth,40.0,Low,Semi-Sweet,,Room Temp,Pretzels,General,Salty,Crunchy,Low,Mild,9,Cognac pairs well with Pretzels due to complementary flavors.
+IPA,Beer,Bitter,6.5,Medium,Semi-Sweet,,Cold,Bhujia,Indian,Spicy,Crunchy,Medium,Hot,4,IPA pairs well with Bhujia due to complementary flavors.
+Mai Tai,Cocktail,Tropical,22.0,Medium,Semi-Sweet,,Cold,Jalebi,Indian,Sweet,Chewy,High,Mild,8,Mai Tai pairs well with Jalebi due to balancing textures.
+Bloody Mary,Cocktail,Savory-Spicy,20.0,Medium,Dry,,Cold,Cheese Platter,French,Savory,Soft,High,Mild,6,Bloody Mary pairs well with Cheese Platter due to balancing textures.
+Champagne,Wine,Sparkling,12.0,High,Dry,Low,Cold,Peanut Butter Cookies,Dessert,Sweet,Soft,High,Mild,8,Champagne pairs well with Peanut Butter Cookies due to contrasting taste.
+Pina Colada,Cocktail,Fruity,18.0,Low,Sweet,,Cold,Samosa,Indian,Spicy,Crispy,Medium,Medium,8,Pina Colada pairs well with Samosa due to contrasting taste.
+Vodka,Spirits,Neutral,40.0,Low,Dry,,Cold,Salted Nuts,Snack,Salty,Crunchy,Medium,Mild,5,Vodka pairs well with Salted Nuts due to contrasting taste.
+Long Island Iced Tea,Cocktail,Strong,28.0,Low,Semi-Dry,,Cold,Barbecue Wings,American,Tangy,Crispy,High,Medium,1,Long Island Iced Tea pairs well with Barbecue Wings due to balancing textures.
+Rum,Spirits,Sweet,38.0,Low,Sweet,,Room Temp,Grilled Chicken,American,Savory,Tender,Medium,Mild,7,Rum pairs well with Grilled Chicken due to contrasting taste.
+Cabernet Sauvignon,Wine,Bold,14.0,High,Dry,High,Room Temp,Popcorn,General,Salty,Crispy,Low,Mild,10,Cabernet Sauvignon pairs well with Popcorn due to balancing textures.
+Riesling,Wine,Floral,11.0,High,Sweet,Low,Cold,Salted Nuts,Snack,Salty,Crunchy,Medium,Mild,7,Riesling pairs well with Salted Nuts due to contrasting taste.
+Pinot Noir,Wine,Light-Bodied,13.0,Medium,Dry,Low,Room Temp,Paneer Tikka,Indian,Savory,Soft,High,Mild,2,Pinot Noir pairs well with Paneer Tikka due to spice contrast.
+Whiskey,Spirits,Smoky,40.0,Low,Dry,,Room Temp,Jalebi,Indian,Sweet,Chewy,High,Mild,5,Whiskey pairs well with Jalebi due to balancing textures.
+Malbec,Wine,Bold,14.0,Medium,Dry,High,Room Temp,Jalebi,Indian,Sweet,Chewy,High,Mild,7,Malbec pairs well with Jalebi due to spice contrast.
+Margarita,Cocktail,Citrusy,25.0,Medium,Semi-Sweet,,Cold,Samosa,Indian,Spicy,Crispy,Medium,Medium,10,Margarita pairs well with Samosa due to contrasting taste.
+Feni,Local Liquor,Fruity,42.0,Low,Semi-Sweet,N/A,Room Temp,Cheese Platter,French,Savory,Soft,High,Mild,5,Feni pairs well with Cheese Platter due to contrasting taste.
+Mahua,Local Liquor,Floral,40.0,Low,Semi-Sweet,N/A,Room Temp,Masala Peanuts,Indian,Spicy,Crunchy,Medium,Medium,7,Mahua pairs well with Masala Peanuts due to spice contrast.
+Toddy,Local Liquor,Mildly Sweet,5.0,Low,Sweet,N/A,Cold,Bhujia,Indian,Spicy,Crunchy,Medium,Hot,1,Toddy pairs well with Bhujia due to contrasting taste.
+Handia,Rice Beer,Mild,6.0,Low,Dry,N/A,Cold,Grilled Chicken,American,Savory,Tender,Medium,Mild,10,Handia pairs well with Grilled Chicken due to spice contrast.
+Apong,Rice Beer,Earthy,6.5,Medium,Dry,N/A,Cold,Samosa,Indian,Spicy,Crispy,Medium,Medium,7,Apong pairs well with Samosa due to complementary flavors.
+Royal Stag,Whiskey,Smooth,42.8,Low,Semi-Dry,N/A,Room Temp,Grilled Chicken,American,Savory,Tender,Medium,Mild,1,Royal Stag pairs well with Grilled Chicken due to spice contrast.
+Blender’s Pride,Whiskey,Caramel,42.8,Low,Semi-Sweet,N/A,Room Temp,Jalebi,Indian,Sweet,Chewy,High,Mild,10,Blender’s Pride pairs well with Jalebi due to spice contrast.
+McDowell’s No.1,Whiskey,Strong,42.8,Low,Dry,N/A,Room Temp,Salted Nuts,Snack,Salty,Crunchy,Medium,Mild,6,McDowell’s No.1 pairs well with Salted Nuts due to spice contrast.
+Old Monk,Rum,Vanilla-Caramel,42.8,Low,Sweet,N/A,Room Temp,Buffalo Wings,American,Spicy,Crispy,High,Hot,2,Old Monk pairs well with Buffalo Wings due to balancing textures.
+McDowell’s No.1 Rum,Rum,Spiced,40.0,Low,Semi-Sweet,N/A,Room Temp,Pani Puri,Indian,Tangy,Crispy,Low,Medium,10,McDowell’s No.1 Rum pairs well with Pani Puri due to spice contrast.
+Kingfisher,Beer,Malty,5.0,Low,Semi-Dry,N/A,Cold,Chips & Guacamole,Mexican,Savory,Crunchy,Medium,Mild,9,Kingfisher pairs well with Chips & Guacamole due to balancing textures.
+Bira 91,Beer,Fruity,4.5,Low,Semi-Sweet,N/A,Cold,Spicy Nachos,Mexican,Spicy,Crunchy,Medium,Hot,10,Bira 91 pairs well with Spicy Nachos due to contrasting taste.
+Magic Moments,Vodka,Neutral,40.0,Low,Dry,N/A,Cold,Dark Chocolate,Dessert,Bitter-Sweet,Smooth,Medium,Mild,3,Magic Moments pairs well with Dark Chocolate due to complementary flavors.
+Sula Chenin Blanc,Wine,Fruity,12.5,Medium,Semi-Sweet,Low,Cold,Dark Chocolate,Dessert,Bitter-Sweet,Smooth,Medium,Mild,8,Sula Chenin Blanc pairs well with Dark Chocolate due to spice contrast.
+Fratelli Sangiovese,Wine,Dry,13.0,Medium,Dry,Medium,Room Temp,Dark Chocolate,Dessert,Bitter-Sweet,Smooth,Medium,Mild,10,Fratelli Sangiovese pairs well with Dark Chocolate due to contrasting taste.
+Royal Challenge Beer,Beer,Malty,5.5,Medium,Semi-Dry,N/A,Cold,Peanut Butter Cookies,Dessert,Sweet,Soft,High,Mild,6,Royal Challenge Beer pairs well with Peanut Butter Cookies due to complementary flavors.
+Haywards 5000,Beer,Strong,7.0,Low,Dry,N/A,Cold,Cheese Platter,French,Savory,Soft,High,Mild,1,Haywards 5000 pairs well with Cheese Platter due to complementary flavors.
+Thunderbolt Beer,Beer,Bold,8.0,Low,Dry,N/A,Cold,Barbecue Wings,American,Tangy,Crispy,High,Medium,2,Thunderbolt Beer pairs well with Barbecue Wings due to contrasting taste.
+Smirnoff,Vodka,Neutral,40.0,Low,Dry,N/A,Cold,Salted Nuts,Snack,Salty,Crunchy,Medium,Mild,5,Smirnoff pairs well with Salted Nuts due to balancing textures.
+Hercules Rum,Rum,Spiced,42.8,Low,Semi-Sweet,N/A,Room Temp,Samosa,Indian,Spicy,Crispy,Medium,Medium,3,Hercules Rum pairs well with Samosa due to balancing textures.
