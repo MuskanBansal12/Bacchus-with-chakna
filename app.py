@@ -3,31 +3,48 @@ import joblib
 import pandas as pd
 import traceback
 import os
+import boto3
+from io import BytesIO
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 
 app = Flask(__name__)
 
-# Load models, encoders, and dataset
-try:
-    drink_model = joblib.load("drink_recommendation_model.pkl")
-    snack_model = joblib.load("snack_recommendation_model.pkl")
-    pairing_notes = joblib.load("pairing_notes.pkl")
-    drink_encoder = joblib.load("drink_encoder.pkl")
-    snack_encoder = joblib.load("snack_encoder.pkl")
-    df = pd.read_csv("processed_dataset.csv")
+# ✅ AWS S3 Configuration
+S3_BUCKET = "wine-food-pairing-models"
+s3_client = boto3.client("s3")
 
-    # Convert column types to standard Python integers
+# ✅ Load file from S3
+def load_file_from_s3(file_name):
+    try:
+        obj = s3_client.get_object(Bucket=S3_BUCKET, Key=file_name)
+        return obj["Body"].read()
+    except Exception as e:
+        print(f"❌ Error loading {file_name} from S3: {str(e)}")
+        return None
+
+# ✅ Load models, encoders, and dataset from S3
+try:
+    drink_model = joblib.load(BytesIO(load_file_from_s3("drink_recommendation_model.pkl")))
+    snack_model = joblib.load(BytesIO(load_file_from_s3("snack_recommendation_model.pkl")))
+    pairing_notes = joblib.load(BytesIO(load_file_from_s3("pairing_notes.pkl")))
+    drink_encoder = joblib.load(BytesIO(load_file_from_s3("drink_encoder.pkl")))
+    snack_encoder = joblib.load(BytesIO(load_file_from_s3("snack_encoder.pkl")))
+
+    # Load dataset
+    df = pd.read_csv(BytesIO(load_file_from_s3("processed_dataset.csv")))
+
+    # Convert column types to integers
     df["Snack Name"] = df["Snack Name"].astype(int)
     df["Beverage Name"] = df["Beverage Name"].astype(int)
 
-    print("✅ Models and Data Loaded Successfully!")
+    print("✅ Models and Data Loaded Successfully from S3!")
 except Exception as e:
-    print(f"❌ Error loading models: {str(e)}")
+    print(f"❌ Error loading models/data: {str(e)}")
     exit(1)
 
-# Feedback storage file
+# ✅ S3 Feedback File
 FEEDBACK_FILE = "feedback.csv"
 
 @app.route("/recommend", methods=["POST"])
@@ -35,7 +52,7 @@ def recommend():
     try:
         data = request.json
         if not data:
-            return jsonify({"error": "No input provided!"}), 400
+            return jsonify({"No input provided!"}), 400
 
         result = {}
 
@@ -70,9 +87,8 @@ def recommend():
             pairing_note = pairing_notes.get((recommended_drink, snack_name), "No pairing note available")
 
             result = {
-                "recommended_drink": recommended_drink,
-                "pairing_note": pairing_note,
-                "message": "Please provide feedback by sending a POST request to /feedback with {'snack': snack_name, 'drink': recommended_drink, 'rating': 1-10}"
+                "Recommended Drink": recommended_drink,
+                "Pairing Note": pairing_note
             }
 
         elif "drink" in data:
@@ -106,9 +122,8 @@ def recommend():
             pairing_note = pairing_notes.get((drink_name, recommended_snack), "No pairing note available")
 
             result = {
-                "recommended_snack": recommended_snack,
-                "pairing_note": pairing_note,
-                "message": "Please provide feedback by sending a POST request to /feedback with {'snack': recommended_snack, 'drink': drink_name, 'rating': 1-10}"
+                "Recommended Snack": recommended_snack,
+                "Pairing Note": pairing_note
             }
 
         else:
@@ -134,48 +149,49 @@ def collect_feedback():
         if rating < 1 or rating > 10:
             return jsonify({"error": "Rating must be between 1 and 10"}), 400
 
-        # Save feedback
         feedback_entry = pd.DataFrame([[snack, drink, rating]], columns=["Snack", "Drink", "Rating"])
-        if not os.path.exists(FEEDBACK_FILE):
-            feedback_entry.to_csv(FEEDBACK_FILE, index=False)
-        else:
-            feedback_entry.to_csv(FEEDBACK_FILE, mode="a", header=False, index=False)
 
-        # **Check if enough feedback is collected to retrain**
-        feedback_df = pd.read_csv(FEEDBACK_FILE)
+        # ✅ Load existing feedback from S3
+        try:
+            obj = s3_client.get_object(Bucket=S3_BUCKET, Key=FEEDBACK_FILE)
+            feedback_df = pd.read_csv(BytesIO(obj["Body"].read()))
+            feedback_df = pd.concat([feedback_df, feedback_entry], ignore_index=True)
+        except Exception:
+            feedback_df = feedback_entry  # If file doesn't exist, create new DataFrame
+
+        # ✅ Save back to S3
+        buffer = BytesIO()
+        feedback_df.to_csv(buffer, index=False)
+        buffer.seek(0)
+        s3_client.put_object(Bucket=S3_BUCKET, Key=FEEDBACK_FILE, Body=buffer.getvalue())
+
         if len(feedback_df) >= 10:
-            retrain_model()  # **Automatically retrain when 10 feedback entries are collected**
-            return jsonify({"message": "Feedback recorded successfully! Model retrained with latest feedback."})
+            retrain_model(feedback_df)
+            return jsonify({"message": "Feedback recorded! Model retrained."})
 
-        return jsonify({"message": "Feedback recorded successfully!"})
+        return jsonify({"message": "Feedback recorded!"})
 
     except Exception as e:
         print(traceback.format_exc())
         return jsonify({"error": "Internal Server Error", "details": str(e)}), 500
 
-def retrain_model():
-    """ Retrains the model when enough feedback data is collected """
+def retrain_model(feedback_df):
+    """ Retrains the model using feedback """
     try:
-        feedback_df = pd.read_csv(FEEDBACK_FILE)
-
-        # Encode feedback
         feedback_df["Snack"] = snack_encoder.transform(feedback_df["Snack"])
         feedback_df["Drink"] = drink_encoder.transform(feedback_df["Drink"])
 
-        # Retrain models using feedback
         X = feedback_df.drop(columns=["Rating"])
         y_drink = feedback_df["Drink"]
         y_snack = feedback_df["Snack"]
 
         X_train, X_test, y_train, y_test = train_test_split(X, y_drink, test_size=0.2, random_state=42)
         drink_model.fit(X_train, y_train)
-        joblib.dump(drink_model, "drink_recommendation_model.pkl")
 
         X_train, X_test, y_train, y_test = train_test_split(X, y_snack, test_size=0.2, random_state=42)
         snack_model.fit(X_train, y_train)
-        joblib.dump(snack_model, "snack_recommendation_model.pkl")
 
-        print("✅ Model retrained successfully with feedback data!")
+        print("✅ Model retrained and updated in S3!")
 
     except Exception as e:
         print(f"❌ Error retraining model: {str(e)}")
